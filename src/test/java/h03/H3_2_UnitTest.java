@@ -18,9 +18,20 @@ class H3_2_UnitTest {
         World.setSize(10, 10);
         World.setDelay(0);
 
-        // TwinRobots twins = new TwinRobots(10, 10);
+        TwinRobots twins = new TwinRobots(10, 10);
+        assertEquals(twins.getRobotByIndex(0).getDirectionOfOffspring(),
+            twins.getRobotByIndex(1).getDirectionOfOffspring());
 
-        // assertEquals(twins.getRobotByIndex(0).getDirectionOfOffspring(),
-        // twins.getRobotByIndex(1).getDirectionOfOffspring());
+        twins.addToDirectionOfBothOffsprings(12);
+        assertEquals(twins.getRobotByIndex(0).getDirectionOfOffspring(),
+            twins.getRobotByIndex(1).getDirectionOfOffspring());
+
+        twins.addToDirectionOfBothOffsprings(-20);
+        assertEquals(twins.getRobotByIndex(0).getDirectionOfOffspring(),
+            twins.getRobotByIndex(1).getDirectionOfOffspring());
+
+        twins.addToDirectionOfBothOffsprings(3);
+        assertEquals(twins.getRobotByIndex(0).getDirectionOfOffspring(),
+            twins.getRobotByIndex(1).getDirectionOfOffspring());
     }
 }

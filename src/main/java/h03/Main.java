@@ -1,5 +1,6 @@
 package h03;
 
+import fopbot.Direction;
 import fopbot.World;
 
 /**
@@ -17,9 +18,12 @@ public class Main {
     }
 
     private static void sandboxTests() {
-        World.setSize(5, 7);
+        World.setSize(7, 5);
         World.setVisible(true);
 
         // Put your code here
+        int numberOfColumns = World.getWidth();
+        int numberOfRows = World.getHeight();
+        RobotWithOffspring robot = new RobotWithOffspring(numberOfColumns, numberOfRows, Direction.UP, 0);
     }
 }
